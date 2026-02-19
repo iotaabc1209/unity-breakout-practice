@@ -42,7 +42,7 @@ public class BreakoutGame : MonoBehaviour
             {
                 finished = true;
                 Debug.Log("Game Over");
-                ballBody.velocity = Vector2.zero;
+                ballBody.linearVelocity = Vector2.zero;
                 return;
             }
 
@@ -65,7 +65,7 @@ public class BreakoutGame : MonoBehaviour
         {
             finished = true;
             Debug.Log("Clear!");
-            ballBody.velocity = Vector2.zero;
+            ballBody.linearVelocity = Vector2.zero;
         }
     }
 
@@ -81,7 +81,7 @@ public class BreakoutGame : MonoBehaviour
     private void ResetBall()
     {
         ball.transform.position = ballStartPosition;
-        ballBody.velocity = Vector2.zero;
+        ballBody.linearVelocity = Vector2.zero;
 
         Vector2 launchDirection = new Vector2(Random.Range(-0.4f, 0.4f), -1f).normalized;
         ballBody.AddForce(launchDirection * ballSpeed, ForceMode2D.Impulse);
